@@ -4,6 +4,7 @@ Requires=aziot-identityd.socket
 After=aziot-identityd.socket
 
 [Service]
+Type=notify
 Environment="LD_LIBRARY_PATH=@private-libs@"
 ExecStart=@libexecdir@/aziot-identity-service/aziot-identityd
 KillMode=process

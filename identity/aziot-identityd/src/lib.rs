@@ -158,6 +158,8 @@ pub async fn main(
 
     let service = http::Service { api };
 
+    let _ = sd_notify::notify(false, &[sd_notify::NotifyState::Ready]);
+
     let incoming = connector
         .incoming(http_common::SOCKET_DEFAULT_PERMISSION, max_requests, None)
         .await?;
